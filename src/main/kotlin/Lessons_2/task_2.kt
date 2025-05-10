@@ -14,7 +14,4 @@ fun main() {
     println("Расход на выплату постоянных сотрудников: $payCheckForStaffCompany")
     println("Общий расход на выплату всего коллектива: $generalPayCheck")
     println("Средняя зарплата после прихода стажеров: $middlePayCheck")
-
-
-
 }
