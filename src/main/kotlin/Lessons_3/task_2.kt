@@ -10,7 +10,7 @@ fun main() {
     println("[$surname $name $middleName: $year лет]")
 
     surname = "Сидорова"
-    year = 20
+    year = 22
 
     println("[$surname $name $middleName: $year лет]")
 }
