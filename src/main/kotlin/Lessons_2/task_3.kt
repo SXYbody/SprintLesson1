@@ -1,8 +1,8 @@
 package org.example.Lessons_2
 
-fun main() {
+ const val minuteSplitHour: Int = 60
 
-    val minuteSplitHour = 60
+fun main() {
     val startTrainHour = 9
     val startTrainMinute = 39
 
