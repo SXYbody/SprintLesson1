@@ -3,10 +3,11 @@ package org.example.Lessons_3
 fun main() {
 
     val stateMove = "D2-D4;0"
+    val splitState = stateMove.split("-",";")
 
-    val start = stateMove.split("-",";").get(0)
-    val end = stateMove.split("-",";").get(1)
-    val numberMove = stateMove.split("-",";").get(2)
+    val start = splitState.get(0)
+    val end = splitState.get(1)
+    val numberMove = splitState.get(2)
 
     println("Откуда ходят - $start")
     println("Куда ходят - $end")
