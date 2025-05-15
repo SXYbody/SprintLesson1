@@ -1,9 +1,9 @@
 package org.example.Lessons_4
 
-const val isSunny: Boolean = true
-const val isTentOpen: Boolean = true
-const val isHumidity: Int = 20
-const val isNeverTime: String = "Зима"
+const val IS_SUNNY: Boolean = true
+const val IS_TENT_OPEN: Boolean = true
+    const val IS_HUMIDITY: Int = 20
+const val IS_NEVER_TIME: String = "Зима"
 
 fun main() {
 
@@ -12,10 +12,10 @@ fun main() {
     val isHumidityToday: Int = 20
     val isNeverTimeToday = "Зима"
 
-    val ability: Boolean = (isSunny == isSunnyToday)
-            && (isTentOpen == isTentOpenToday)
-            && (isHumidity == isHumidityToday)
-            && (isNeverTime != isNeverTimeToday)
+    val ability: Boolean = (IS_SUNNY == isSunnyToday) &&
+            (IS_TENT_OPEN == isTentOpenToday) &&
+            (IS_HUMIDITY == isHumidityToday) &&
+            (IS_NEVER_TIME != isNeverTimeToday)
 
     println("Благоприятные ли условия сейчас для роста бобовых? $ability")
 }
