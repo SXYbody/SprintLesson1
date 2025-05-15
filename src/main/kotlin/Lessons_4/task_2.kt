@@ -6,16 +6,21 @@ const val MAX_VOLUME = 100
 
 fun main() {
 
-    var weight = 20
+    var weight = 25
     var volume = 80
+    var resultWeight = (MIN_WEIGHT <= weight) and (weight < MAX_WEIGHT)
+    var resultVolume = volume < MAX_VOLUME
+    var resultGeneral: Boolean = resultWeight && resultVolume
 
-    val resultWeight = weight in MIN_WEIGHT..MAX_WEIGHT
-    val resultVolume = volume < MAX_VOLUME
-
-    println("Груз с весом $weight кг и объемом $volume л соответствует категории 'Average': ${resultWeight && resultVolume}")
+    var messageResult = "Груз с весом $weight кг и объемом $volume л соответствует категории 'Average': $resultGeneral"
+    println(messageResult)
 
     weight = 50
     volume = 100
+    resultWeight = (MIN_WEIGHT <= weight) and (weight < MAX_WEIGHT)
+    resultVolume = volume < MAX_VOLUME
+    resultGeneral= resultWeight && resultVolume
 
-    println("Груз с весом $weight кг и объемом $volume л соответствует категории 'Average': ${resultWeight && resultVolume}")
+    messageResult = "Груз с весом $weight кг и объемом $volume л соответствует категории 'Average': $resultGeneral"
+    println(messageResult)
 }
