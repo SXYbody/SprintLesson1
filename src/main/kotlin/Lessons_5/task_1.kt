@@ -2,7 +2,10 @@ package org.example.Lessons_5
 
 fun main() {
 
-    println("Решите пример: 6 + 11")
+    val number1 = 6
+    val number2 = 11
+
+    println("Решите пример: $number1 + $number2")
     val userString = readln().toInt()
 
     if (userString == 17) println("Добро пожаловать!")
