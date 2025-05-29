@@ -6,8 +6,8 @@ fun main() {
 
     val userNumber1 = readln().toInt()
     val userNumber2 = readln().toInt()
-    val winNumber1 = 25
-    val winNumber2 = 12
+    val winNumber1 = (0..42).random()
+    val winNumber2 = (0..42).random()
     var guessesNumber: Int = 0
 
     if ((userNumber1 == winNumber1)||(userNumber1 == winNumber2)) guessesNumber ++
