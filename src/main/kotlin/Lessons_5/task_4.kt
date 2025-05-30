@@ -8,14 +8,14 @@ fun main() {
     val userPassword = "PanGalactic"
     val readName = readln()
 
-    if (readName == userName){
+    if (readName == userName) {
         println("Введите пароль")
-        val readPassword= readln()
+        val readPassword = readln()
 
-        if (readPassword == userPassword){
+        if (readPassword == userPassword) {
             println("Добро пожаловать!")
         }
-    }else{
+    } else {
         println("Такого аккаунта нет. Хотите зарегестрироватся?")
     }
 }
