@@ -7,9 +7,11 @@ fun main() {
     val userName = "Zaphod"
     val userPassword = "PanGalactic"
     val readName = readln()
-    val readPassword= readln()
 
     if (readName == userName){
+        println("Введите пароль")
+        val readPassword= readln()
+
         if (readPassword == userPassword){
             println("Добро пожаловать!")
         }
