@@ -4,11 +4,9 @@ fun main() {
     println("Введите число больше 0")
 
     val userNumber = readln().toInt()
-    val range = 0..userNumber
+    val range = 0..userNumber step 2
 
     for (i in range) {
-        if (i % 2 == 0){
-            println(i)
-        }
+        println(i)
     }
 }
