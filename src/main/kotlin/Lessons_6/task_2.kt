@@ -2,17 +2,10 @@ package org.example.Lessons_6
 
 fun main() {
 
-    val userSeconds: Int = readln().toInt()
-    var timerSeconds = userSeconds
+    val userSeconds: Long = readln().toLong()
 
-    while (userSeconds > 0) {
+    Thread.sleep(1000 * userSeconds)
 
-        timerSeconds--
-        Thread.sleep(1000)
+    println("Прошло: $userSeconds секунд")
 
-        if (timerSeconds == 0) {
-            println("Прошло: $userSeconds секунд")
-            break
-        }
-    }
 }
