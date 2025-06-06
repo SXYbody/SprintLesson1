@@ -2,12 +2,12 @@ package org.example.Lessons_8
 
 fun main() {
 
-    val reviewAD = arrayOf(100, 200, 150, 1000, 630, 134, 456)
-    var resultReview = 0
+    val reviewArray = arrayOf(100, 200, 150, 1000, 630, 134, 456)
+    var sumReviewArray = 0
 
-    for (i in 0 until reviewAD.size){
-        resultReview += reviewAD[i]
+    for (i in 0 until reviewArray.size) {
+        sumReviewArray += reviewArray[i]
     }
 
-    println("Количество просмотров: $resultReview")
+    println("Количество просмотров: $sumReviewArray")
 }
