@@ -1,5 +1,7 @@
 package org.example.Lessons_7
 
+const val RANGE_FIRST = 3
+
 fun main() {
 
     val numberRange = '0'..'9'
@@ -17,9 +19,9 @@ fun main() {
             continue
         }
 
-        var password = ""
+        var password = "${numberRange.random()}${lowCaseRange.random()}${highCaseRange.random()}"
 
-        for (i in 1..lengthPassword) {
+        for (i in 1..lengthPassword - RANGE_FIRST) {
             password += resultRange.random()
         }
 
