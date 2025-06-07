@@ -4,17 +4,13 @@ fun main() {
 
     val ingredientsArray = arrayOf("Картошка", "Лук", "Укроп", "Свекла", "Майонез", "Огурец", "Помидор")
 
-    var ingredientsString = ""
-    for (i in ingredientsArray) {
-        ingredientsString += "$i "
-    }
-
-    println("Список продуктов: $ingredientsString")
+    println("Список продуктов: ${ingredientsArray.joinToString()}")
     println("Напишите название ингредиента, который хотите заменить")
 
     val userIngredient = readln().toString()
+    val userIngredientIndex = ingredientsArray.indexOf(userIngredient)
 
-    if (userIngredient in ingredientsArray) {
+    if (userIngredientIndex != -1) {
         println("Напишите название продукта, которым хотели бы его заменить:")
     } else {
         println("Такого продукта даже нет в списке!")
@@ -22,12 +18,7 @@ fun main() {
     }
 
     val userIngredients1 = readln().toString()
-    ingredientsArray.set(ingredientsArray.indexOf(userIngredient), userIngredients1)
+    ingredientsArray.set(userIngredientIndex, userIngredients1)
 
-    ingredientsString = ""
-    for (i in ingredientsArray) {
-        ingredientsString += "$i "
-    }
-
-    println("Список продуктов: $ingredientsString")
+    println("Список продуктов: ${ingredientsArray.joinToString()}")
 }
