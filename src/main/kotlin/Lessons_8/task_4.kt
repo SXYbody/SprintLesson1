@@ -2,7 +2,7 @@ package org.example.Lessons_8
 
 fun main() {
 
-    val ingredientsArray = arrayOf("Картошка", "Лук", "Укроп", "Свекла", "Майонез", "Огурец", "Помидор")\
+    val ingredientsArray = arrayOf("Картошка", "Лук", "Укроп", "Свекла", "Майонез", "Огурец", "Помидор")
 
     var ingredientsString = ""
     for (i in ingredientsArray) {
