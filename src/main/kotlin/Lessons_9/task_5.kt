@@ -5,7 +5,7 @@ const val MAX_INGREDIENTS = 5
 fun main() {
     println("Введите 5 продуктов, которые хотите внести в рецепт")
 
-    val userIngredientList = mutableListOf<String>()
+    val userIngredientList = mutableSetOf<String>()
     var count = 0
 
     do {
@@ -20,7 +20,7 @@ fun main() {
 
     } while (count != MAX_INGREDIENTS)
 
-    val sortedIngredientList = userIngredientList.sorted()
+    val sortedIngredientList = userIngredientList.sorted().joinToString().replaceFirstChar { it.uppercase() }
 
     println(sortedIngredientList)
 }
