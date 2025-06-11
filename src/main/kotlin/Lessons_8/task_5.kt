@@ -6,12 +6,9 @@ fun main() {
     val userNumberIngredient = readln().toInt()
     var ingredientArray = arrayOfNulls<String>(userNumberIngredient)
 
-    var count = 0
-    do {
-        ingredientArray.set(count, readln())
-        count += 1
-
-    } while (count != userNumberIngredient)
+    for (i in 0 until userNumberIngredient) {
+        ingredientArray.set(i, readln())
+    }
 
     println(ingredientArray.joinToString())
 }
