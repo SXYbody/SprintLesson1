@@ -8,7 +8,7 @@ fun main() {
     val userIngredientList = mutableSetOf<String>()
     var count = 0
 
-    while (count < MAX_INGREDIENTS){
+    while (count < MAX_INGREDIENTS) {
         val userIngredient = readln()
 
         if (userIngredient !in userIngredientList) {
