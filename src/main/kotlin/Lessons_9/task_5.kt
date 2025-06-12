@@ -8,17 +8,16 @@ fun main() {
     val userIngredientList = mutableSetOf<String>()
     var count = 0
 
-    do {
+    while (count < MAX_INGREDIENTS){
         val userIngredient = readln()
 
-        if (!userIngredientList.contains(userIngredient)) {
+        if (userIngredient !in userIngredientList) {
             userIngredientList.add(userIngredient)
             count += 1
         } else {
             println("Вы уже вводили этот продукт!")
         }
-
-    } while (count != MAX_INGREDIENTS)
+    }
 
     val sortedIngredientList = userIngredientList.sorted().joinToString().replaceFirstChar { it.uppercase() }
 
