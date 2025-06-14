@@ -1,8 +1,8 @@
 package org.example.Lessons_10
 
 fun main() {
-    val numberMachine = getDiceNumber()
-    val numberHuman = getDiceNumber()
+    val numberMachine = getDiceNumber1()
+    val numberHuman = getDiceNumber1()
 
     println("Вам выпало: $numberHuman \nКомпьютеру выпало: $numberMachine")
 
@@ -11,8 +11,10 @@ fun main() {
         numberHuman < numberMachine -> println("Победили машины!")
         numberHuman == numberMachine -> println("Победила дружба!")
     }
+
 }
 
-fun getDiceNumber (): Int {
+fun getDiceNumber1(): Int {
     return (1..6).random()
 }
+
