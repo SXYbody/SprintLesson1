@@ -9,4 +9,5 @@ class Users (
     fun getStatisticUser(){
         println("ID: $id, Логин: $login, Пароль: $password, Почта: $mail")
     }
+
 }

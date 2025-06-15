@@ -7,4 +7,5 @@ fun main() {
 
     println(user1.getStatisticUser())
     println(user2.getStatisticUser())
+
 }
