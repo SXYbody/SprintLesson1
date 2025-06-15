@@ -34,4 +34,5 @@ fun main() {
     user2.shiftPassword()
     user2.shiftBio()
     user2.printUserInformation()
+
 }
