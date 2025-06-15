@@ -8,7 +8,7 @@ fun main() {
     val userName = readln()
     val userPassword = readln()
 
-    val token = authorizations(name = userName, password = userPassword)
+    val token = authorization(name = userName, password = userPassword)
     if (token != null) {
         println("Ваш токен: $token")
     } else {
@@ -28,16 +28,10 @@ fun main() {
     }
 }
 
-fun authorizations(name: String, password: String): String? {
+fun authorization(name: String, password: String): String? {
 
     if (name == NICK_NAME && password == NICK_PASSWORD) {
-        val generalRange = (0..9) + ('a'..'z') + ('A'..'Z')
-        var token = ""
-
-        for (i in 0..32) {
-            token += generalRange.random()
-        }
-        return token
+        generationToken()
     }
     return null
 }
@@ -49,5 +43,15 @@ fun getBasketShop(token: String, userMessageToken: String): List<String>? {
         return listShop
     }
     return null
+}
 
+fun generationToken(): String {
+
+    val generalRange = (0..9) + ('a'..'z') + ('A'..'Z')
+    var token = ""
+
+    for (i in 0..32) {
+        token += generalRange.random()
+    }
+    return token
 }
