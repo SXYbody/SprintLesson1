@@ -1,9 +1,9 @@
 package org.example.Lessons_12
 
-class dayStatistic1(_dayTemperature: Double, _nightTemperature: Double, _isSludge: Boolean) {
-    var dayTemperature: Double = _dayTemperature
-    var nightTemperature: Double = _nightTemperature
-    var isSludge: Boolean = _isSludge
+class dayStatistic1(
+    var dayTemperature: Double,
+    var nightTemperature: Double,
+    var isSludge: Boolean) {
 }
 
 fun main() {
