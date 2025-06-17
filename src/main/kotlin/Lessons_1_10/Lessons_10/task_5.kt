@@ -1,4 +1,4 @@
-package org.example.Lessons_10
+package org.example.Lessons_1_10.Lessons_10
 
 const val NICK_NAME = "Jack_Vorobey"
 const val NICK_PASSWORD = "GetPhone125"
