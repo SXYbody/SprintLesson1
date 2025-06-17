@@ -5,21 +5,21 @@ class Category(
     val description: String,
     val id: Int,
     val imageUrl: String,
-) {}
+    val recipeList: List<Recipe> = listOf(),
+)
 
 class Recipe(
     val title: String,
-    val description: String? = null,
     val id: Int,
     val imageUrl: String,
-    val cookingMethod: List<String> = listOf(),
-) {}
+    val ingredientList: List<Ingredient> = listOf()
+)
 
 class Ingredient(
     val title: String,
-    val amount: Int,
+    val amount: String,
     val unit: String,
-) {}
+)
 
 fun main() {
 
