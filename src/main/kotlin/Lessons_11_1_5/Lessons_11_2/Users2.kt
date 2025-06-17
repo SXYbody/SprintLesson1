@@ -1,4 +1,4 @@
-package org.example.Lessons_11_2
+package org.example.Lessons_11_1_5.Lessons_11_2
 
 class Users2(
     val id: Int,

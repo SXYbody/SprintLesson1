@@ -1,4 +1,4 @@
-package org.example.Lessons_11_3
+package org.example.Lessons_11_1_5.Lessons_11_3
 
 class Room(
     val roomCover: String,
