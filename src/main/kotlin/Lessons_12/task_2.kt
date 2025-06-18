@@ -3,8 +3,7 @@ package org.example.Lessons_12
 class dayStatistic1(
     var dayTemperature: Double,
     var nightTemperature: Double,
-    var isSludge: Boolean) {
-}
+    var isSludge: Boolean)
 
 fun main() {
 
