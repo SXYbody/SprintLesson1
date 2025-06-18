@@ -9,23 +9,19 @@ class Forum() {
     fun createNewUser(name: String): Int {
         val user = ForumMember(++id, name)
         memberList.add(user)
-
         return id
     }
 
     fun createNewMessage(id: Int, userMessage: String) {
-
-        val message = ForumMessage(id, userMessage)
-        messageList.add(message)
+        if (memberList.find { it.userId == id }?.userId == id) {
+            val message = ForumMessage(id, userMessage)
+            messageList.add(message)
+        }
     }
 
     fun printThread() {
-        for (member in memberList) {
-            for (message in messageList) {
-                if (member.userId == message.authorId) {
-                    println("${member.userName} : ${message.message}")
-                }
-            }
+        for (message in messageList) {
+            println("${memberList.find { it.userId == message.authorId }?.userName}: ${message.message}")
         }
     }
 }
@@ -47,9 +43,8 @@ fun main() {
     val user2 = forum1.createNewUser("Ватсон")
 
     forum1.createNewMessage(user1, "Андерсен, не говори вслух, ты понижаешь IQ всей улицы!")
-    forum1.createNewMessage(user1, "Не мешайте искать улики.")
-
     forum1.createNewMessage(user2, "Ну что там? Шерлок.")
+    forum1.createNewMessage(user1, "Не мешайте искать улики.")
     forum1.createNewMessage(user2, "Может я могу тебе чем-то помочь?")
 
     forum1.printThread()
