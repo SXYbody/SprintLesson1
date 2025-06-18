@@ -1,59 +1,56 @@
 package org.example.Lessons_11_5
 
-val memberList = mutableListOf<forumMember>()
-val messageList = mutableListOf<forumMessage>()
 
-class forumMember(
-    val userId: String,
-    val userName: String,
-) {}
+class Forum() {
+    val memberList: MutableList<ForumMember> = mutableListOf()
+    val messageList: MutableList<ForumMessage> = mutableListOf()
+    var id = 0
 
-class forumMessage(
-    val authorId: String,
-    val message: String,
-) {}
+    fun createNewUser(name: String): Int {
+        val user = ForumMember(++id, name)
+        memberList.add(user)
 
-fun createNewUser(name: String): forumMember {
-
-    val idRange = 0..9
-    var id = ""
-    for (i in 0..3) {
-        id += idRange.random()
+        return id
     }
 
-    memberList.add(forumMember(id, name))
-    return forumMember(id, name)
-}
+    fun createNewMessage(id: Int, userMessage: String) {
 
-fun createNewMessage(id: String, userMessage: String) {
-
-    for (i in memberList) {
-        if (i.userId == id) {
-            messageList.add(forumMessage(id, userMessage))
-        }
+        val message = ForumMessage(id, userMessage)
+        messageList.add(message)
     }
-}
 
-fun printThread() {
-    for (i in messageList) {
-        for (g in memberList) {
-            if (g.userId == i.authorId) {
-                print("\n${g.userName}: ${i.message}")
+    fun printThread() {
+        for (member in memberList) {
+            for (message in messageList) {
+                if (member.userId == message.authorId) {
+                    println("${member.userName} : ${message.message}")
+                }
             }
         }
     }
 }
 
+class ForumMember(
+    val userId: Int,
+    val userName: String,
+)
+
+class ForumMessage(
+    val authorId: Int,
+    val message: String,
+)
+
 fun main() {
+    val forum1 = Forum()
 
-    val user1 = createNewUser("Шерлок")
-    val user2 = createNewUser("Ватсон")
+    val user1 = forum1.createNewUser("Шерлок")
+    val user2 = forum1.createNewUser("Ватсон")
 
-    createNewMessage(user1.userId, "Андерсен, не говори вслух, ты понижаешь IQ всей улицы!")
-    createNewMessage(user1.userId, "Не мешайте искать улики.")
+    forum1.createNewMessage(user1, "Андерсен, не говори вслух, ты понижаешь IQ всей улицы!")
+    forum1.createNewMessage(user1, "Не мешайте искать улики.")
 
-    createNewMessage(user2.userId, "Ну что там? Шерлок.")
-    createNewMessage(user2.userId, "Может я могу тебе чем-то помочь?")
+    forum1.createNewMessage(user2, "Ну что там? Шерлок.")
+    forum1.createNewMessage(user2, "Может я могу тебе чем-то помочь?")
 
-    printThread()
+    forum1.printThread()
 }
