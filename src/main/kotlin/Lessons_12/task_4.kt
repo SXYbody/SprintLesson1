@@ -1,16 +1,18 @@
 package org.example.Lessons_12
 
-class dayStatistic2 constructor( _dayTemperature: Int, _nightTemperature: Int,  _isSludge: Boolean) {
+const val TEMPERATURE_CELSIUS = 273.15
 
-    var dayTemperature = _dayTemperature
-    var nightTemperature = _nightTemperature
+class dayStatistic2 constructor(_dayTemperature: Int, _nightTemperature: Int, _isSludge: Boolean) {
+
+    var dayTemperature = _dayTemperature - TEMPERATURE_CELSIUS
+    var nightTemperature = _nightTemperature - TEMPERATURE_CELSIUS
     var isSludge = _isSludge
 
-    fun printDayState() {
-        println("Температура днем: ${(dayTemperature - 32) / 1.8} C \nТемпература ночью:${(nightTemperature - 32) / 1.8} C \nОсадки:$isSludge")
+    init {
+        println("Температура днем: $dayTemperature C \nТемпература ночью:$nightTemperature C \nОсадки:$isSludge")
     }
 }
 
 fun main() {
-    dayStatistic2( 150, 30, true).printDayState()
+    dayStatistic2(400, 30, true)
 }
