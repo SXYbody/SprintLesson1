@@ -1,16 +1,16 @@
 package org.example.Lessons_13
 
 class UsersInformation1(
-    val userName: String,
-    val userPhone: Long,
-    val userCompany: String? = null,
+    val name: String,
+    val phoneNumber: Long,
+    val company: String? = null,
 ) {
     fun printUserInfo() {
-        println("Имя: $userName \nНомер: $userPhone \nКомпания: ${userCompany ?: "Не указано"}")
+        println("Имя: $name \nНомер: $phoneNumber \nКомпания: ${company ?: "Не указано"}")
     }
 }
 
 fun main() {
-    val user1 = UsersInformation1("Уолтер", 79628456235, null)
+    val user1 = UsersInformation1("Уолтер", 79628456235)
     user1.printUserInfo()
 }
