@@ -1,11 +1,7 @@
 package org.example.Lessons_13
 
-class UsersInformation(
-    val userName: String,
-    val userPhone: Long,
-    val userCompany: String?,
+class UserInformation(
+    val name: String,
+    val phoneNumber: Long,
+    val company: String?,
 )
-
-fun main() {
-    UsersInformation("Уолтер",79628456235,null)
-}
