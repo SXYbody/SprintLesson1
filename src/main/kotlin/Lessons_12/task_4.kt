@@ -1,11 +1,11 @@
 package org.example.Lessons_12
 
-const val TEMPERATURE_CELSIUS = 273.15
+const val TEMPERATURE_CELSIUS1 = 273.15
 
-class dayStatistic2 constructor(_dayTemperature: Int, _nightTemperature: Int, _isSludge: Boolean) {
+class dayStatistic3 constructor(_dayTemperature: Int, _nightTemperature: Int, _isSludge: Boolean) {
 
-    var dayTemperature = _dayTemperature - TEMPERATURE_CELSIUS
-    var nightTemperature = _nightTemperature - TEMPERATURE_CELSIUS
+    var dayTemperature = _dayTemperature - TEMPERATURE_CELSIUS1
+    var nightTemperature = _nightTemperature - TEMPERATURE_CELSIUS1
     var isSludge = _isSludge
 
     init {
@@ -14,5 +14,5 @@ class dayStatistic2 constructor(_dayTemperature: Int, _nightTemperature: Int, _i
 }
 
 fun main() {
-    dayStatistic2(400, 30, true)
+    dayStatistic3(400, 30, true)
 }
