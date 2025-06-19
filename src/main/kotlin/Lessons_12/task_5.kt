@@ -10,38 +10,21 @@ class DayStatistic3(
     val isSludge: Boolean
 )
 
-fun averageDayTemperature(): Int {
-    var sumTemp = 0
+fun averageDayTemperature(): Double {
     val list1 = dayList.map { it.dayTemperature }
-    for (i in list1) {
-        sumTemp += i
-    }
-    sumTemp / list1.size
-
-    return sumTemp
+    return list1.average()
 }
 
-fun averageNightTemperature(): Int {
-    var sumTemp = 0
+fun averageNightTemperature(): Double {
     val list1 = dayList.map { it.nightTemperature }
-    for (i in list1) {
-        sumTemp += i
-    }
-    sumTemp / list1.size
-
-    return sumTemp
+    return list1.average()
 }
 
 fun amountDayOfSludge(): Int {
-    var sumSludge = 0
     val list1 = dayList.map { it.isSludge }
-    for (i in list1) {
-        if (i == true) {
-            sumSludge++
-        }
-    }
-    return sumSludge
+    return list1.filter { it.and(true) }.size
 }
+
 
 fun main() {
 
