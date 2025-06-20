@@ -2,7 +2,7 @@ package org.example.Lessons_13
 
 class UsersInformation3(
     val name: String,
-    val phoneNumber: Long?,
+    val phoneNumber: Long,
     val company: String?,
 ) {
     fun printUserInfo() {
@@ -13,11 +13,21 @@ class UsersInformation3(
 fun main() {
     val usersList: MutableList<UsersInformation3> = mutableListOf()
 
-    val user1 = UsersInformation3(readln(), readln().toLongOrNull(), readlnOrNull())
-    if (user1.phoneNumber != null) {
-        usersList.add(user1)
-        println(user1.company)
-    } else {
-        println("Вы не ввели номер телефона!")
+    println("Введите имя:")
+    val userName = readln()
+
+    println("Введите номер телефона:")
+    var userPhone: Long = readln().toLong()
+    if (userPhone.toString() == "") {
+        return
     }
+
+
+    var userCompany = readLine()
+    if (userCompany!!.isEmpty()) userCompany = null
+
+    val user = UsersInformation3(name = userName, phoneNumber = userPhone, company = userCompany)
+    usersList.add(user)
+    user.printUserInfo()
+
 }
