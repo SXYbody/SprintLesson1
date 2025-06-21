@@ -15,11 +15,6 @@ fun main() {
         UsersInformation2("Кеша", 79628456231, "null")
     )
 
-    usersList.mapNotNull {
-        if (it.company != null) {
-            println(setOf(it.company))
-        } else {
-            null
-        }
-    }
+    val companies = usersList.mapNotNull { it.company }.toSet()
+    println("Список компаний в телефонной книге: $companies")
 }
