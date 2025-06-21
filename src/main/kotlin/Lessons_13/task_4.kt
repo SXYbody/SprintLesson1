@@ -17,14 +17,12 @@ fun main() {
     val userName = readln()
 
     println("Введите номер телефона:")
-    var userPhone: Long = readln().toLong()
-    if (userPhone.toString() == "") {
-        return
-    }
+    val userPhone: Long? = readln().toLongOrNull()
+    if (userPhone == null) return
 
-
+    println("Введите компанию:")
     var userCompany = readLine()
-    if (userCompany!!.isEmpty()) userCompany = null
+    if (userCompany.isNullOrEmpty()) userCompany = null
 
     val user = UsersInformation3(name = userName, phoneNumber = userPhone, company = userCompany)
     usersList.add(user)
