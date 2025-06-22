@@ -1,6 +1,6 @@
 package org.example.Lessons_13
 
-import java.text.NumberFormat
+import java.lang.NumberFormatException
 
 class UsersInformation4(
     val name: String,
@@ -17,7 +17,7 @@ fun main() {
         val userNumber = readln().toLong()
         UsersInformation4("Клара", userNumber).printUserInfo()
 
-    } catch (e: Exception) {
-        println(e)
+    } catch (e: NumberFormatException) {
+        println(e.javaClass)
     }
 }
