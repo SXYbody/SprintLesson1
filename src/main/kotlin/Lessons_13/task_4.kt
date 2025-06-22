@@ -13,21 +13,26 @@ class UsersInformation3(
 fun main() {
     val usersList: MutableList<UsersInformation3> = mutableListOf()
 
-    println("Введите имя:")
-    val userName = readln()
+    while (true) {
+        println("Введите имя:")
+        val userName: String? = readLine()
+        if (userName == null){
+            usersList.forEach { it.printUserInfo() }
+            break
+        }
 
-    println("Введите номер телефона:")
-    val userPhone: Long? = readln().toLongOrNull()
-    if (userPhone == null) {
-        println("Вы ввели некорректный номер телефона")
-        return
+        println("Введите номер телефона:")
+        val userPhone: Long? = readln().toLongOrNull()
+        if (userPhone == null) {
+            println("Вы ввели некорректный номер телефона")
+            continue
+        }
+
+        println("Введите компанию:")
+        var userCompany = readLine()
+        if (userCompany.isNullOrEmpty()) userCompany = null
+
+        val user = UsersInformation3(name = userName, phoneNumber = userPhone, company = userCompany)
+        usersList.add(user)
     }
-
-    println("Введите компанию:")
-    var userCompany = readLine()
-    if (userCompany.isNullOrEmpty()) userCompany = null
-
-    val user = UsersInformation3(name = userName, phoneNumber = userPhone, company = userCompany)
-    usersList.add(user)
-    usersList.forEach { it.printUserInfo() }
 }
