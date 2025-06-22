@@ -16,10 +16,7 @@ fun main() {
     while (true) {
         println("Введите имя:")
         val userName: String? = readLine()
-        if (userName == null){
-            usersList.forEach { it.printUserInfo() }
-            break
-        }
+        if (userName == null) break
 
         println("Введите номер телефона:")
         val userPhone: Long? = readln().toLongOrNull()
@@ -35,4 +32,6 @@ fun main() {
         val user = UsersInformation3(name = userName, phoneNumber = userPhone, company = userCompany)
         usersList.add(user)
     }
+
+    usersList.forEach { it.printUserInfo() }
 }
