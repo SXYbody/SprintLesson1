@@ -18,7 +18,10 @@ fun main() {
 
     println("Введите номер телефона:")
     val userPhone: Long? = readln().toLongOrNull()
-    if (userPhone == null) return
+    if (userPhone == null) {
+        println("Вы ввели некорректный номер телефона")
+        return
+    }
 
     println("Введите компанию:")
     var userCompany = readLine()
@@ -26,6 +29,5 @@ fun main() {
 
     val user = UsersInformation3(name = userName, phoneNumber = userPhone, company = userCompany)
     usersList.add(user)
-    user.printUserInfo()
-
+    usersList.forEach { it.printUserInfo() }
 }
