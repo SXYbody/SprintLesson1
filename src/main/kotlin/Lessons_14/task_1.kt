@@ -48,4 +48,5 @@ fun main() {
     val iceBreak1 = Icebreaker("Ледокол1")
     iceBreak1.printShipInfo()
     iceBreak1.singularProperty()
+
 }
