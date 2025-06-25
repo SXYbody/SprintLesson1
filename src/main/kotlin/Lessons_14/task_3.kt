@@ -2,16 +2,15 @@ package org.example.Lessons_14
 
 import kotlin.collections.forEach
 
+const val BLACK_COLOR = "Черный"
+const val  WHITE_COLOR = "Белый"
+
 abstract class Figure(
     val color: String,
 ) {
-    open fun calculateArea(): Int {
-        return 0
-    }
+    abstract fun calculateArea(): Int
 
-    open fun calculatePerimeter(): Int {
-        return 0
-    }
+    abstract fun calculatePerimeter(): Int
 }
 
 class Rectangle(
@@ -45,18 +44,18 @@ class Circle(
 
 fun main() {
     val list1 = listOf(
-        Rectangle("Черный", 25, 4),
-        Rectangle("Белый", 10, 7),
-        Circle("Черный", 10),
-        Circle("Белый", 6)
+        Rectangle(BLACK_COLOR, 25, 4),
+        Rectangle(WHITE_COLOR, 10, 7),
+        Circle(BLACK_COLOR, 10),
+        Circle(WHITE_COLOR, 6)
     )
 
     var sumBlack = 0
     var sumWhite = 0
     list1.forEach {
         when (it.color) {
-            "Черный" -> sumBlack += it.calculatePerimeter()
-            "Белый" -> sumWhite += it.calculateArea()
+            BLACK_COLOR -> sumBlack += it.calculatePerimeter()
+            WHITE_COLOR -> sumWhite += it.calculateArea()
         }
     }
     println("Сумма периметров черных фигур: $sumBlack\nСумма площадей белых фигур: $sumWhite")
