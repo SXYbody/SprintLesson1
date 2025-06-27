@@ -1,44 +1,50 @@
 package org.example.Lessons_15
 
+import java.text.BreakIterator
+
 abstract class Animal(
     val name: String
-) : Moving
+)
 
-interface Moving {
-    fun move()
+interface BirdMove {
+    fun fly()
+}
+
+interface FishMove {
+    fun swim()
 }
 
 class Duck(
     name: String,
-) : Animal(name = name){
+) : Animal(name = name), BirdMove {
 
-    override fun move() {
+    override fun fly() {
         println("$name крякает и бегает!")
     }
 }
 
 class Salmon(
     name: String,
-) : Animal(name = name){
-    override fun move() {
+) : Animal(name = name), FishMove {
+    override fun swim() {
         println("$name плавает и булькает :<")
     }
 }
 
 class Gull(
     name: String,
-) : Animal(name = name){
-    override fun move() {
+) : Animal(name = name), BirdMove {
+    override fun fly() {
         println("$name неохотно перебирает лапками...")
     }
 }
 
 fun main() {
     val duck = Duck("Утка")
-    duck.move()
+    duck.fly()
     val salmon = Salmon("Карась")
-    salmon.move()
+    salmon.swim()
     val gull = Gull("Чайка")
-    gull.move()
+    gull.fly()
 
 }
