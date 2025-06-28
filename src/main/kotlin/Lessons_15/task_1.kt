@@ -1,31 +1,33 @@
 package org.example.Lessons_15
 
-import java.text.BreakIterator
-
 abstract class Animal(
     val name: String
 )
 
-interface BirdMove {
+interface Flyable {
     fun fly()
 }
 
-interface FishMove {
+interface Swimming {
     fun swim()
 }
 
 class Duck(
     name: String,
-) : Animal(name = name), BirdMove {
+) : Animal(name = name), Flyable, Swimming {
 
     override fun fly() {
         println("$name крякает и бегает!")
+    }
+
+    override fun swim() {
+        println("$name плавает виляя хвостиком :>")
     }
 }
 
 class Salmon(
     name: String,
-) : Animal(name = name), FishMove {
+) : Animal(name = name), Swimming {
     override fun swim() {
         println("$name плавает и булькает :<")
     }
@@ -33,7 +35,7 @@ class Salmon(
 
 class Gull(
     name: String,
-) : Animal(name = name), BirdMove {
+) : Animal(name = name), Flyable {
     override fun fly() {
         println("$name неохотно перебирает лапками...")
     }
@@ -42,6 +44,7 @@ class Gull(
 fun main() {
     val duck = Duck("Утка")
     duck.fly()
+    duck.swim()
     val salmon = Salmon("Карась")
     salmon.swim()
     val gull = Gull("Чайка")
