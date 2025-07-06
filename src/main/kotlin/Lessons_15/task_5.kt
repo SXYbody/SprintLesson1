@@ -1,11 +1,13 @@
 package org.example.Lessons_15
 
 abstract class Car(
-    val amountPassenger: Int,
-    val quantityTonsMax: Int,
+    val amountPassenger: Int = 0,
+    val quantityTonsMax: Int = 0,
     val passengerList: MutableList<String>,
-    var quantityTonsNow: Int
+    var quantityTonsNow: Int = 0,
 ) : Landing {
+    override val car: Car
+        get() = car
 
     fun printCarInfo() {
         println("Кол-во пассажиров: $amountPassenger \n Кол-во перевозимого груза: $quantityTonsNow тонн")
@@ -14,43 +16,36 @@ abstract class Car(
 
 class PassengerCar(
     amountPassenger: Int = 3,
-    quantityTons: Int = 0,
     passengerList: MutableList<String> = mutableListOf<String>(),
-    quantityTonsNow: Int = 0,
 ) : Car(
     amountPassenger = amountPassenger,
-    quantityTonsMax = quantityTons,
     passengerList = passengerList,
-    quantityTonsNow = quantityTonsNow
 )
 
 class CargoCar(
     amountPassenger: Int = 1,
     quantityTons: Int = 2,
     passengerList: MutableList<String> = mutableListOf<String>(),
-    quantityTonsNow: Int = 0,
 ) : Car(
     amountPassenger = amountPassenger,
     quantityTonsMax = quantityTons,
     passengerList = passengerList,
-    quantityTonsNow = quantityTonsNow
 ), Shipping
 
 interface Landing {
+    abstract val car: Car
 
     fun addPassenger(passenger: String) {
-        val car = this as Car
         if (car.passengerList.size < car.amountPassenger) {
-            passengerList.add(passenger)
+            car.passengerList.add(passenger)
         } else {
             println("Места в салоне закончились!")
         }
     }
 
     fun removePassenger(passenger: String) {
-        val car = this as Car
         if (car.passengerList.isNotEmpty()) {
-            passengerList.remove(passenger)
+            car.passengerList.remove(passenger)
         } else {
             println("Пассажиров больше не осталось!")
         }
@@ -58,9 +53,9 @@ interface Landing {
 }
 
 interface Shipping {
+    abstract val car: Car
 
     fun addTonn(tons: Int) {
-        val car = this as Car
         if ((car.quantityTonsNow < car.quantityTonsMax) && (tons <= car.quantityTonsMax)) {
             car.quantityTonsNow += tons
         } else {
@@ -69,7 +64,6 @@ interface Shipping {
     }
 
     fun removeTonn(tons: Int) {
-        val car = this as Car
         if (car.quantityTonsNow != 0) {
             car.quantityTonsNow -= 1
         } else {
@@ -97,5 +91,4 @@ fun main() {
     car1.printCarInfo()
     car2.printCarInfo()
     cargo1.printCarInfo()
-
 }
