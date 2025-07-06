@@ -47,6 +47,4 @@ fun main() {
     admin1.addMessage("Пока")
     admin1.deleteUser(user1)
     admin1.deleteMessage(mes1.toString())
-
-
 }
