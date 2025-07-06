@@ -1,17 +1,21 @@
 package org.example.Lessons_15
 
-abstract class Product(
+open class Product(
     val name: String,
     val amount: Int,
-) : Searching
-
-val listProduct = mutableListOf<Product>()
+) {
+    fun addListProduct(list: MutableList<Product>) {
+        if (!list.contains(this)) {
+            list.add(this)
+        }
+    }
+}
 
 class Tool(
     name: String,
     amount: Int,
     val listOfComponent: List<Component>,
-) : Product(name = name, amount = amount)
+) : Product(name = name, amount = amount), Searching
 
 class Component(
     name: String,
@@ -20,9 +24,9 @@ class Component(
 
 interface Searching {
 
-    fun search() {
+    fun search(list: MutableList<Product>) {
         println("Выполняется процесс поиска")
-        if (listProduct.contains(this)) {
+        if (list.contains<Any>(this)) {
             val product: Product = this as Product
             if (product.amount >= 0) {
                 when (product) {
@@ -39,19 +43,22 @@ interface Searching {
 }
 
 fun main() {
+    val list = mutableListOf<Product>()
     val comp1 = Component("Дека", 5)
-    listProduct.add(comp1)
+    comp1.addListProduct(list)
+
     val comp2 = Component("Струны", 100)
-    listProduct.add(comp2)
+    comp2.addListProduct(list)
+
     val comp3 = Component("Клавишы", 120)
-    listProduct.add(comp3)
+    comp3.addListProduct(list)
+
     val tool1 = Tool(
         "Гитара", 20, listOf(
-            comp1, comp2, comp3
+            comp1, comp2
         )
     )
-    listProduct.add(tool1)
+    tool1.addListProduct(list)
 
-    tool1.search()
-    comp3.search()
+    tool1.search(list)
 }
