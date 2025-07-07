@@ -1,13 +1,13 @@
 package org.example.Lessons_16
 
 class GameCube(
-    private val number: Int = (0..6).random()
+    private val number: Int = (1..6).random()
 ) {
-    fun cubeNumber() {
+    fun getNumber() {
         println(number)
     }
 }
 
 fun main() {
-    GameCube().cubeNumber()
+    val cube = GameCube().getNumber()
 }
