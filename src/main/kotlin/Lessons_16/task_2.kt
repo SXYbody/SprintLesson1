@@ -1,20 +1,23 @@
 package org.example.Lessons_16
 
+import kotlin.math.pow
+
+private const val numberPi: Double = 3.14
+
 class Circle(
-    private val radius: Int,
-    private val numberPi: Double = 3.14
+    private val radius: Double,
 ) {
-    fun dependSquare() {
-        println(radius * radius * numberPi)
+    fun getArea(): Double {
+        return radius.pow(2) * numberPi
     }
 
-    fun dependLength() {
-        println(2 * numberPi * radius)
+    fun getLong(): Double {
+        return 2 * numberPi * radius
     }
 }
 
 fun main() {
-    val circle1 = Circle(6)
-    circle1.dependSquare()
-    circle1.dependLength()
+    val circle1 = Circle(6.0)
+    circle1.getArea()
+    circle1.getLong()
 }
