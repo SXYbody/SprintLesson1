@@ -9,5 +9,6 @@ class GameCube(
 }
 
 fun main() {
-    val cube = GameCube().getNumber()
+    val cube = GameCube()
+    cube.getNumber()
 }
