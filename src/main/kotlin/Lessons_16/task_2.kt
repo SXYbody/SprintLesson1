@@ -2,22 +2,22 @@ package org.example.Lessons_16
 
 import kotlin.math.pow
 
-private const val numberPi: Double = 3.14
+private const val NUMBER_PI: Double = 3.14
 
 class Circle(
     private val radius: Double,
 ) {
     fun getArea(): Double {
-        return radius.pow(2) * numberPi
+        return radius.pow(2) * NUMBER_PI
     }
 
     fun getLong(): Double {
-        return 2 * numberPi * radius
+        return 2 * NUMBER_PI * radius
     }
 }
 
 fun main() {
     val circle1 = Circle(6.0)
-    circle1.getArea()
-    circle1.getLong()
+    println(circle1.getArea())
+    println(circle1.getLong())
 }
