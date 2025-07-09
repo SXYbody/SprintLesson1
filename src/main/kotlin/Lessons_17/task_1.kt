@@ -1,18 +1,20 @@
 package org.example.Lessons_17
 
-class Task {
-    val quest: String = "Сколько материков на земле?"
+class Task(
+    _quest: String,
+    _answer: String,
+) {
+    val quest = _quest
         get() = field
-    var answer: String = ""
+    var answer = _answer
         get() = field
         set(value) {
             field = value
-            if (value.equals("шесть", true)) println("Правильно!") else println("Неправильно!")
         }
 }
 
 fun main() {
-    val task1 = Task()
+    val task1 = Task("Сколько существует материков на земле?","Шесть")
     task1.quest
     task1.answer = readln()
 }
