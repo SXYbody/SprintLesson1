@@ -4,13 +4,7 @@ class User(
     private val login: String,
     private val password: String,
 ) {
-    fun validation(userPassword: String): Boolean {
-        if (userPassword == password) {
-            return true
-        } else {
-            return false
-        }
-    }
+    fun validation(userPassword: String): Boolean = userPassword == password
 }
 
 fun main() {
