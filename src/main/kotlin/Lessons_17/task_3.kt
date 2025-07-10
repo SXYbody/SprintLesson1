@@ -10,16 +10,11 @@ class Folder(
     _isSecret: Boolean = false,
 ) {
     var name: String = _name
-        get() {
-            if (isSecret) "Скрытая папка" else field
-            return field
-        }
+        get() = if (isSecret) "Скрытая папка" else field
+
 
     var fileList: Int = _fileList.size
-        get() {
-            if (isSecret) 0 else field
-            return field
-        }
+        get() = if (isSecret) 0 else field
 
     var isSecret = _isSecret
 }
