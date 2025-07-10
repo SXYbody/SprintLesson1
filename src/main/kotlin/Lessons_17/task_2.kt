@@ -2,12 +2,12 @@ package org.example.Lessons_17
 
 class Ship(
     _name: String,
-    _average_speed: Int,
+    _averageSpeed: Int,
     port: String,
 ) {
     var name = _name
         set(value) {
-            println("Имя коробля нельзя поменять!!")
+            println("Имя корабля нельзя поменять!!")
         }
 }
 
