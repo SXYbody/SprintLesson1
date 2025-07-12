@@ -13,7 +13,9 @@ class User(
     var password = _password
         get() {
             var secretPassword = ""
-            for (i in field) secretPassword += "*"
+            repeat(field.length) {
+                secretPassword += "*"
+            }
             return secretPassword
         }
         set(value) = println("Вы не можете изменить пароль!")
@@ -24,6 +26,4 @@ fun main() {
     user1.login = "Бэйбик"
     println(user1.password)
     user1.password = "01234785"
-
-
 }
