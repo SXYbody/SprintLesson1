@@ -1,11 +1,9 @@
 package org.example.Lessons_17
 
 class Premiss(
-    _number: String,
+    val number: String,
     _location: String,
 ){
-    val number = _number
-
     var location = _location
        set(value) {
             field = value
