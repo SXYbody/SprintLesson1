@@ -8,27 +8,27 @@ abstract class Dice(
 }
 
 class FourDice(
-    edge: String,
+    edge: String = "4",
     range: IntRange,
-) : Dice(edge = edge, range = range){
+) : Dice(edge = edge, range = range) {
     override fun throwNumber() {
         println("В кубике с $edge гранями, выпало число ${range.random()}")
     }
 }
 
 class SixDice(
-    edge: String,
+    edge: String = "6",
     range: IntRange,
-) : Dice(edge = edge, range = range){
+) : Dice(edge = edge, range = range) {
     override fun throwNumber() {
         println("В кубике с $edge гранями, выпало число ${range.random()}")
     }
 }
 
 class EightDice(
-    edge: String,
+    edge: String = "8",
     range: IntRange,
-) : Dice(edge = edge, range = range){
+) : Dice(edge = edge, range = range) {
     override fun throwNumber() {
         println("В кубике с $edge гранями, выпало число ${range.random()}")
     }
@@ -36,9 +36,9 @@ class EightDice(
 
 fun main() {
     val list1 = listOf(
-        FourDice("4", 1..4),
-        SixDice("6", 1..6),
-        EightDice("8", 1..8)
+        FourDice(range = 1..4),
+        SixDice(range = 1..6),
+        EightDice(range = 1..8)
     )
     list1.map { it.throwNumber() }
 }
