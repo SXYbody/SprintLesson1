@@ -1,32 +1,36 @@
 package org.example.Lessons_18
 
 abstract class Dice(
+    val edge: Int,
     val range: IntRange,
 ) {
     open fun throwNumber() {}
 }
 
 class FourDice(
+    edge: Int = 4,
     range: IntRange,
-) : Dice(range = range) {
+) : Dice(edge = edge, range = range) {
     override fun throwNumber() {
-        println("В кубике с 4 гранями, выпало число ${range.random()}")
+        println("В кубике с $edge гранями, выпало число ${range.random()}")
     }
 }
 
 class SixDice(
+    edge: Int = 6,
     range: IntRange,
-) : Dice(range = range) {
+) : Dice(edge = edge, range = range) {
     override fun throwNumber() {
-        println("В кубике с 6 гранями, выпало число ${range.random()}")
+        println("В кубике с $edge гранями, выпало число ${range.random()}")
     }
 }
 
 class EightDice(
+    edge: Int = 8,
     range: IntRange,
-) : Dice(range = range) {
+) : Dice(edge = edge, range = range) {
     override fun throwNumber() {
-        println("В кубике с 8 гранями, выпало число ${range.random()}")
+        println("В кубике с $edge гранями, выпало число ${range.random()}")
     }
 }
 
