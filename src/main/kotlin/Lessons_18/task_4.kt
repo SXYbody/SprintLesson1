@@ -20,7 +20,7 @@ class Rectangle(
     val height: Double,
 ) : Box() {
     override fun getSquareArea(): Double {
-        return (2 * (length * width) + 2 * (length * height) + 2 * (width * height)) * height
+        return 2 * ((length * width) + (length * height) + (width * height))
     }
 }
 
