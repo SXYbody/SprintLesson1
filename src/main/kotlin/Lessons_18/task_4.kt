@@ -6,7 +6,7 @@ abstract class Box() {
     abstract fun getSquareArea(): Double
 }
 
-class Square(
+class Square1(
     val edge: Double,
 ) : Box() {
     override fun getSquareArea(): Double {
@@ -25,7 +25,7 @@ class Rectangle(
 }
 
 fun main() {
-    val box1 = Square(20.0)
+    val box1 = Square1(20.0)
     println(box1.getSquareArea())
 
     val box2 = Rectangle(10.0, 30.2, 5.0)
