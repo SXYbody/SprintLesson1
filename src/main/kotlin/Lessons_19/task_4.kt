@@ -12,9 +12,7 @@ class Tank(
         when (cartridge) {
             Cartridge.EMPTY -> println("У вас нет боезопасов!")
             else -> println("Вы выстрелили! Нанесено ${cartridge.power} урона")
-
         }
-
     }
 }
 
