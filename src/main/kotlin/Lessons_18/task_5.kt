@@ -4,14 +4,12 @@ abstract class Screen() {
     open fun draw(
         abscissa: Int,
         ordinate: Int,
-    ) {
-    }
+    ) {}
 
     open fun draw(
         abscissa: Float,
         ordinate: Float,
-    ) {
-    }
+    ) {}
 }
 
 class Circle() : Screen() {
