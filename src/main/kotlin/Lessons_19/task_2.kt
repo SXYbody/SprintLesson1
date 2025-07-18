@@ -1,40 +1,34 @@
 package org.example.Lessons_19
 
-enum class Categories {
-    CLOTH {
-        override fun getCategoriesString(): String {
-            return "Одежда"
-        }
-    },
-    OFFICE {
-        override fun getCategoriesString(): String {
-            return "Канцелярские Товары"
-        }
-    },
-    OTHER {
-        override fun getCategoriesString(): String {
-            return "Прочее"
-        }
-    };
+enum class Category {
+    CLOTHING,
+    STATIONERY,
+    OTHER;
 
-    abstract fun getCategoriesString(): String
+    fun getCategoryName(): String {
+        when (this) {
+            CLOTHING -> return "Одежда"
+            STATIONERY -> return "Канцелярские товары"
+            OTHER -> return "Прочее"
+        }
+    }
 }
 
 class Product(
     val title: String,
     val id: Int,
-    val categories: Categories,
+    val category: Category,
 ) {
     fun getDescription() {
-        println("Назвнание продукта: $title, ID: $id, Категория: ${categories.getCategoriesString()}")
+        println("Назвнание продукта: $title, ID: $id, Категория: ${category.getCategoryName()}")
     }
 }
 
 fun main() {
-    val product1 = Product("Рубашка",1, Categories.CLOTH)
+    val product1 = Product("Рубашка", 1, Category.CLOTHING)
     product1.getDescription()
 
-    val product2 = Product("Резинка для волос",2, Categories.OTHER)
+    val product2 = Product("Резинка для волос", 2, Category.OTHER)
     product2.getDescription()
 
 }
