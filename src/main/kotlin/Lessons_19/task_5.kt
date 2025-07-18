@@ -6,23 +6,17 @@ class User4(
 )
 
 enum class Sex() {
-    MAN {
-        override fun getSexString(): String {
-            return "Мужчина"
-        }
-    },
-    WOMAN {
-        override fun getSexString(): String {
-            return "Женщина"
-        }
-    },
-    NOT_SPECIFIED {
-        override fun getSexString(): String {
-            return "Не указано"
-        }
-    };
+    MAN,
+    WOMAN,
+    NOT_SPECIFIED;
 
-    abstract fun getSexString(): String
+    fun getSexString(): String {
+        when (this) {
+            MAN -> return "Мужчина"
+            WOMAN -> return "Женщина"
+            NOT_SPECIFIED -> return "Не указано"
+        }
+    }
 }
 
 fun main() {
@@ -36,7 +30,7 @@ fun main() {
         when (sex) {
             "мужчина" -> list1.add(User4(name, Sex.MAN))
             "женщина" -> list1.add(User4(name, Sex.WOMAN))
-            "нне указано" -> list1.add(User4(name, Sex.NOT_SPECIFIED))
+            "не указано" -> list1.add(User4(name, Sex.NOT_SPECIFIED))
             else -> {
                 println("Введите правильно пол!")
                 continue
