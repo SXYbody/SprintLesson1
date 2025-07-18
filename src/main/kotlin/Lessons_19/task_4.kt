@@ -2,7 +2,7 @@ package org.example.Lessons_19
 
 class Tank(
     val name: String,
-    var cartridge: Cartridge = Cartridge.EMPTY,
+    var cartridge: Cartridge? = null
 ) {
     fun setCartridgeTank(cartridge: Cartridge) {
         this.cartridge = cartridge
@@ -10,14 +10,13 @@ class Tank(
 
     fun shoot() {
         when (cartridge) {
-            Cartridge.EMPTY -> println("У вас нет боезопасов!")
-            else -> println("Вы выстрелили! Нанесено ${cartridge.power} урона")
+            null -> println("У вас нет боезопасов!")
+            else -> println("Вы выстрелили! Нанесено ${cartridge?.power} урона")
         }
     }
 }
 
 enum class Cartridge(val power: Int) {
-    EMPTY(0),
     BLUE(5),
     GREEN(10),
     RED(20),
