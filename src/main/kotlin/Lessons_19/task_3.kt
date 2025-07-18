@@ -4,8 +4,8 @@ class Ship4(
     val name: String,
     val landToEarth: Boolean
 ) {
-    fun landfall(): Boolean {
-        TODO()
+    fun landfall() {
+        // доработать TODO()
     }
 
     fun shootToAsteroid() {
@@ -14,7 +14,7 @@ class Ship4(
 }
 
 fun main() {
-    val ship1 = Ship4("Звездный разрушитель",true)
+    val ship1 = Ship4("Звездный разрушитель", true)
     ship1.landfall()
     ship1.shootToAsteroid()
 }
