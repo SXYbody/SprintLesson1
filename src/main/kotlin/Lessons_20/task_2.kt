@@ -8,9 +8,7 @@ class Player(
 
 fun main() {
 
-    val treatmentHealthPlayerLambda: (Player) -> Unit = { player ->
-        if (player.health >= 15) { player.health = player.maxHealth } else player.health += 5
-    }
+    val treatmentHealthPlayerLambda: (Player) -> Unit = { player -> player.health = player.maxHealth }
 
     val player1 = Player(name = "Эграссель", health = 10)
     println("Здоровье игрока сейчас: ${player1.health}")
