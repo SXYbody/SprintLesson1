@@ -9,9 +9,7 @@ class Player(
 
 fun Player.maxCategory(): Set<String>? {
     val listSkill = listOf(strength, agility, intellect)
-    val max = listSkill.maxBy { it.values.size }
-
-    return max.keys
+    return (listSkill.maxBy { it.values.size }).keys
 }
 
 fun main() {
