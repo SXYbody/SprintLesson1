@@ -7,8 +7,5 @@ fun main() {
 }
 
 fun String.vowelCount(): Int {
-    val vowels = "aeiouAEIOUаеёиоуыэюяАЕЁИОУЫЭЮЯ"
-    var count = 0
-    for (i in this) if (i in vowels) count++
-    return count
+    return this.asSequence().count(predicate = { it in "aeiouAEIOUаеёиоуыэюяАЕЁИОУЫЭЮЯ" })
 }
