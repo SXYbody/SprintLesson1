@@ -14,7 +14,4 @@ fun main() {
 
 }
 
-fun Player4.isHealthy(): Boolean {
-    if (health == maxHealth) return true
-    else return false
-}
+fun Player4.isHealthy(): Boolean = health == maxHealth
