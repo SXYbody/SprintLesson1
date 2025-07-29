@@ -1,36 +1,19 @@
 package org.example.Lessons_21
 
-import org.example.Lessons_15.messageList
-
 class Player(
     val name: String,
-    val strength: Map<String, Experience>,
-    val agility: Map<String, Experience>,
-    val intellect: Map<String, Experience>,
+    val skills: Map<String, Int>,
 )
 
-class Experience(
-    val value: Int,
-    val listExp: MutableList<Experience>,
-) {
-    init {
-        listExp.add(this)
-    }
-}
-
-fun Map<String, Experience>.maxCategory(list: MutableList<Experience>): Set<String>? {
-    if (list.maxBy { it.value } in this.values) return this.keys else return null
+fun Map<String, Int>.maxCategory(): String? {
+    this.values.forEach { if (it == this.maxByOrNull { it.value }?.value) return this.maxByOrNull { it.value }?.key }
+    return null
 }
 
 fun main() {
-    val list1 = mutableListOf<Experience>()
     val player1 = Player(
         "Джонни",
-        strength = mapOf("Сила" to Experience(5, list1)),
-        agility = mapOf("Ловкость" to Experience(10, list1)),
-        intellect = mapOf("Интеллект" to Experience(25, list1)),
+        mapOf("Сила" to 10, "Ловкость" to 5, "Интеллект" to 12)
     )
-    println("Ваша максимально прокаченная характеристика:${player1.agility.maxCategory(list1)}")
+    println("Ваша максимально прокаченная характеристика: ${player1.skills.maxCategory()}")
 }
-
-// я не понимаю, как сделать это задание :(
