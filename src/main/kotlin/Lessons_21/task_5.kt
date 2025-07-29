@@ -6,8 +6,7 @@ class Player(
 )
 
 fun Map<String, Int>.maxCategory(): String? {
-    this.values.forEach { if (it == this.maxByOrNull { it.value }?.value) return this.maxByOrNull { it.value }?.key }
-    return null
+    return this.maxByOrNull { it.value }?.key
 }
 
 fun main() {
